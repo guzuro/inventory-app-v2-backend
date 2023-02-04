@@ -719,6 +719,11 @@
     tslib "2.5.0"
     uuid "9.0.0"
 
+"@nestjs/mapped-types@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/mapped-types/-/mapped-types-1.2.0.tgz#1bbdbb5c956f0adb3fd76add929137bc6ad3183f"
+  integrity sha512-NTFwPZkQWsArQH8QSyFWGZvJ08gR+R4TofglqZoihn/vU+ktHEJjMqsIsADwb7XD97DhiD+TVv5ac+jG33BHrg==
+
 "@nestjs/platform-express@^9.0.0":
   version "9.3.2"
   resolved "https://registry.yarnpkg.com/@nestjs/platform-express/-/platform-express-9.3.2.tgz#1cb75b774fbb45dd09c7dc18e04fd5f4ba65284c"
