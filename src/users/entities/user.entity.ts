@@ -1,11 +1,13 @@
 import { UserRole } from "../../types/enums/UserRole"
-import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, Unique } from 'typeorm';
 type UserId = string
 
 
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn({
+        primaryKeyConstraintName: 'id'
+    })
     id: number
 
     @Column({
@@ -17,14 +19,11 @@ export class User {
         nullable: true,
     }) lastName: string
 
-    @Column({
-        unique: true,
-    })
+    @Unique('login', ['login'])
+    @Column()
     login: string
 
-    @Column({
-        unique: true,
-    })
+    @Unique('email', ['email'])
     email: string
 
     @Column()
