@@ -1,13 +1,13 @@
 import { Module } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { UsersController } from './users.controller';
-import { PrismaModule } from '../prisma/prisma.module';
-import { PrismaService } from '../prisma/prisma.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { User } from './entities/user.entity';
 
 @Module({
   controllers: [UsersController],
-  providers: [UsersService, PrismaService],
-  imports: [PrismaModule],
-  exports: [PrismaService]
+  providers: [UsersService],
+  imports: [TypeOrmModule.forFeature([User])],
+  exports: [TypeOrmModule]
 })
-export class UsersModule {}
+export class UsersModule { }
