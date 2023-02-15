@@ -24,6 +24,7 @@ export class User {
     login: string
 
     @Unique('email', ['email'])
+    @Column()
     email: string
 
     @Column()
