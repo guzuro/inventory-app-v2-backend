@@ -11,14 +11,9 @@ export class UsersService {
   private usersRepository: Repository<User>,) { }
 
   async create(createUserDto: CreateUserDto) {
-    try {
-      await this.usersRepository.save({
-        ...createUserDto
-      })
-    } catch (e) {
-      throw e.detail
-
-    }
+    return await this.usersRepository.save({
+      ...createUserDto
+    })
   }
 
   findAll() {
