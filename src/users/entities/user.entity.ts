@@ -19,11 +19,11 @@ export class User {
         nullable: true,
     }) lastName: string
 
-    @Unique('login', ['login'])
+    @Unique('UQ_login', ['login'])
     @Column()
     login: string
 
-    @Unique('email', ['email'])
+    @Unique('UQ_email', ['email'])
     @Column()
     email: string
 
