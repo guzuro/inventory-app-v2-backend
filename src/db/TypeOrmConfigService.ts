@@ -5,11 +5,7 @@ import { User } from "../users/entities/user.entity";
 
 @Injectable()
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
-    constructor(private config: ConfigService) {
-        console.log(this.createTypeOrmOptions());
-
-    }
-
+    constructor(private config: ConfigService) { }
 
     createTypeOrmOptions(): TypeOrmModuleOptions {
         return {
