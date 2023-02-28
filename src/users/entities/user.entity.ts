@@ -1,23 +1,17 @@
 import { UserRole } from "../../types/enums/UserRole"
 import { Entity, Column, PrimaryGeneratedColumn, UpdateDateColumn, CreateDateColumn, Unique } from 'typeorm';
-type UserId = string
-
+import { Exclude } from 'class-transformer';
 
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn({
-        primaryKeyConstraintName: 'id'
-    })
+    @PrimaryGeneratedColumn({ primaryKeyConstraintName: 'id' })
     id: number
 
-    @Column({
-        nullable: true,
-    })
+    @Column({ nullable: true, })
     firstName: string
 
-    @Column({
-        nullable: true,
-    }) lastName: string
+    @Column({ nullable: true, })
+    lastName: string
 
     @Unique('UQ_login', ['login'])
     @Column()
@@ -28,6 +22,7 @@ export class User {
     email: string
 
     @Column()
+    @Exclude()
     password: string
 
     @CreateDateColumn()
