@@ -20,8 +20,8 @@ export class UsersService {
     return `This action returns all users`;
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async getUserByLogin(login: string) {
+    return await this.usersRepository.findOneBy({ login })
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
